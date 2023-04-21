@@ -49,9 +49,6 @@ btnCheck.addEventListener('click', () => {
   }
 });
 
-btnAgain.addEventListener('click', () => {
-  resetGame();
-});
 const resetGame = function () {
   guess.value = '';
   msg.innerHTML = 'Start guessing...';
@@ -63,7 +60,7 @@ const resetGame = function () {
   highscore.innerHTML = scoreArray.reduce((a, b) => {
     return b > a ? b : a;
   }, 0);
-
   btnCheck.disabled = false;
   btnCheck.style.cursor = 'pointer';
 };
+btnAgain.addEventListener('click', resetGame);
