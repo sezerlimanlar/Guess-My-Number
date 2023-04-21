@@ -1,3 +1,3 @@
 #SAYI TAHMİN OYUNU
-[örnek1](https://www.hizliresim.com/ig1dhcd)
-[örnek2](https://www.hizliresim.com/9bi3c8z)
+![örnek resim1](https://i.hizliresim.com/ig1dhcd.png)
+![örnek resim2](https://i.hizliresim.com/9bi3c8z.png)
