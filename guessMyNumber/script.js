@@ -13,29 +13,26 @@ let scores = 20;
 
 let rndNumber = Math.floor(Math.random() * 20) + 1;
 
-let hScore = 0;
 console.log(rndNumber); //
 btnCheck.addEventListener('click', () => {
   if (rndNumber < guess.value) {
     msg.innerHTML = 'Too High!';
-    hScore++;
     scores--;
     score.innerHTML = scores;
   } else if (rndNumber > guess.value) {
     msg.innerHTML = 'Too Low!';
-    hScore++;
+
     scores--;
     score.innerHTML = scores;
   } else if (rndNumber == guess.value) {
     msg.innerHTML = 'Correct Number!';
     body.style.backgroundColor = 'green';
-    hScore++;
 
     scores--;
     btnCheck.disabled = true;
     score.innerHTML = scores;
     number.innerHTML = rndNumber;
-    scoreArray.push(hScore);
+    scoreArray.push(scores);
     highscore.innerHTML = scoreArray.reduce((a, b) => {
       return b > a ? b : a;
     }, 0);
@@ -50,12 +47,12 @@ btnCheck.addEventListener('click', () => {
 });
 
 const resetGame = function () {
+  rndNumber = Math.floor(Math.random() * 20) + 1;
   guess.value = '';
   msg.innerHTML = 'Start guessing...';
   number.innerHTML = '?';
   scores = 20;
   score.innerHTML = scores;
-  hScore = 0;
   body.style.backgroundColor = '#222';
   highscore.innerHTML = scoreArray.reduce((a, b) => {
     return b > a ? b : a;
